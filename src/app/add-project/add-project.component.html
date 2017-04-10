@@ -1,0 +1,35 @@
+<h3 class="add-project-heading">Add/Upadte Project </h3>
+<hr>
+
+	<div class="form-group">
+		Name : 
+		<input class="form-control"
+			type ="text"
+			placeholder="Your project's name here."
+			name= "name"
+			[(ngModel)]="projectModel.name">
+	</div>
+
+	<div class="form-group">
+		Status : 
+		<select class="form-control" name="status" [(ngModel)]="projectModel.status">
+			<option value='m'> Started </option>
+			<option value='f'> In developpement </option>
+			<option value='f'> Finished </option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		Repository : 
+		<input class="form-control"
+			type ="text"
+			placeholder="Your repository here."
+			name="repository"
+			[(ngModel)]="projectModel.repository">
+	</div>
+
+	<div class="form-group">
+		<button *ngIf="isInsert" class="btn btn-primary" (click)="addProject()">Add Project</button> 
+        <button  *ngIf="!isInsert" class="btn btn-primary" (click)="updateProject()">Update</button>
+		<button  class="btn " (click)="resetAddProject()">Reset</button>
+	</div>

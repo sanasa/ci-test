@@ -1,0 +1,14 @@
+.project-list-heading{
+	margin: 0px auto;
+	text-align: center;
+	font-weight: 200;
+	padding: 10px;
+}
+
+.deleteProjects{
+	float: right;
+	padding: 4px;
+	cursor: pointer;
+	color: #f92121;
+	z-index: 2;
+}
