@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import {Auth} from './services/auth.service';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: 'app.component.html',
+  
   
 })
 export class AppComponent {
-  title = 'This is an angular 2 app!';
+  constructor(private auth:Auth){
+
+  }
 }
