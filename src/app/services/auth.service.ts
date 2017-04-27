@@ -1,3 +1,5 @@
+import { Router, NavigationStart } from '@angular/router';
+import 'rxjs/add/operator/filter';
 import { Injectable }      from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 
