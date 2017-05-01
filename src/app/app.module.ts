@@ -23,6 +23,7 @@ import {AuthGuard} from './auth.guard';
     FormsModule,
     HttpModule,
     routing
+    
   ],
   providers: [
     appRoutingProviders,

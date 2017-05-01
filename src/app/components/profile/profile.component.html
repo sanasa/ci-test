@@ -1,11 +1,47 @@
 <div class="row">
     <div class="col-md-2">
         <img class="img-circle" style="width:100%" src="{{profile.picture}}">
+    </div>
+    <div class="col-md-10">
+        <h1>{{profile.nickname}}'s Profile</h1>
+        <p  *ngIf='user'>
+            <a href="{{profile.html_url}}"> Github link</a>
+        </p>
+    </div>
+
+    <div class="col-md-8"  *ngIf='user'>
+        <div class="stats">
+            <span class="label label-primary">{{profile.public_repos}} Public Repos</span>
+            <span class="label label-info">{{profile.followers}} Followers</span>
+            <span class="label label-warning">{{profile.following}} Following</span>
         </div>
-        <div class="col-md-10">
-            <h1>{{profile.nickname}}'s Profile</h1>
-            <p>Email: {{profile.name}}</p>
-            <p>Last Update:{{profile.created_at}}</p>
+    </div>
+</div>
+<br>
+<div class="panel panel-default"  *ngIf='user'>
+    <div class="panel-heading">
+        <h3 class="panel-title">{{profile.nickname}}'s repositories:</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div *ngFor="let repo of repos">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4><a href={{repo.html_url}} target="_blank">{{repo.name}}</a></h4>
+                            <p>{{repo.description}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="label label-primary">{{repo.watchers}} Watchers</span>
+                            <span class="label label-primary">Created at: {{repo.created_at| date: 'dd/MM/yyyy'}}</span>
+                            
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 </div>
 
+    <div class="alert alert-warning" *ngIf="!user">Please log in with a github account to start a project!</div>
